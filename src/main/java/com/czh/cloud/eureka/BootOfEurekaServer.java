@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @EnableEurekaServer
-@EnableAutoConfiguration
 @SpringBootApplication(scanBasePackages = "com.czh.cloud")
 public class BootOfEurekaServer {
 
@@ -16,7 +15,7 @@ public class BootOfEurekaServer {
         if (os.contains("windows")) {
             System.setProperty("log.path", "D:/chenzhehao/workspace/czh");
         } else {
-            System.setProperty("log.path", "/opt");
+            System.setProperty("log.path", "/Users/chenzhehao/Documents/springcloud");
         }
         System.setProperty("context.name", "eureka-server");
 
