@@ -5,9 +5,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @EnableEurekaServer
 @SpringBootApplication(scanBasePackages = "com.czh.cloud")
+@RestController
 public class BootOfEurekaServer {
 
     public static void main(String[] args) {
@@ -20,5 +23,9 @@ public class BootOfEurekaServer {
         System.setProperty("context.name", "eureka-server");
 
         SpringApplication.run(BootOfEurekaServer.class, args);
+    }
+    @RequestMapping("/")
+    public Object test() {
+        return "success";
     }
 }
